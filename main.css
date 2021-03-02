@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+body, html{
+  font-family: 'Play', sans-serif;
+  line-height: 1.3;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+}
+
+.navbar-brand{
+  font-family: 'Permanent Marker', cursive;  
+  font-size: 4vh;  
+}
+
+body{
+  background-color: rgb(221, 217, 216); 
+}
+
+
+/* ig odkaz */
+#reference h1, #reference p{
+  text-align: center; 
+  color: #000;
+  font-weight: 700;
+}
+
+#reference h1{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#reference p{
+  padding-bottom: 80px;
+  
+}
+
+.ig-img{  
+  height: auto;
+  width: 80vw;
+  max-width: 780px;   
+}
+/* ig odkaz */
+
+
+/* clanky */
+
+#clanky{
+  padding: 15px;  
+}
+
+.card{ 
+  height: 300px;   
+  min-width: 330px;  
+  -webkit-box-shadow: 2px 2px 16px 2px rgba(0,0,0,0.57); 
+  box-shadow: 2px 2px 16px 2px rgba(0,0,0,0.57);
+ }
+
+ .pad{
+  padding-bottom: 25px;
+ }
+
+ .card-img {
+  height: 300px;
+  object-fit: cover;
+ }
+
+ .card-text {
+   position: absolute;
+   color: white; 
+   z-index: 3;
+   text-align: center;
+   bottom: 25px;
+   right: 25px;   
+   left: 25px;
+ }
+
+ .card-text a {
+   text-decoration: none;
+   color: white;     
+ }
+
+ .card-text a:hover{
+   text-decoration: underline;
+ }
+
+
+ /* clanky */
+
+/* FOOTER */
+
+ .footer_top{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(100, 100, 100);  
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 50px 0px;
+}
+
+.btn{
+  border: 2px solid #000;
+  background-color: transparent;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-family:'Play', sans-serif;
+  text-align: center;  
+}
+
+.newsletter-footer label{
+  font-family: 'Play' , sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+
+.text-center{
+  text-align: center!important;
+}
+
+.form-control{
+  margin: 15px 0px;  
+  max-width: 400px;    
+}
+
+
+.footer-box-text a {
+  text-decoration: none;
+  color: rgb(99, 94, 94);  
+  font-weight: lighter;
+}
+
+.footer-box-text li{
+  list-style: none;
+  position: relative;  
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.footer-box-text ul{
+  padding: 0;
+}
+
+.footer-box-text a:hover{
+  text-decoration: underline;
+}
+
+.telefon {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.footer-box-text strong{
+  color: #000;
+  display: inline-block;
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+/* FOOTER */
+
+
+
+
+/* carousel */
+.carousel-item {
+  height: 80vh;
+  
+}
+
+.carousel-item > img {
+  object-fit: cover;  
+  min-width: 100%;
+  height: 80vh;
+  
+}
+
+.carousel {
+  margin-bottom: 100px;
+}
+
+
+
+
+
+
+/* RESPONSIVE CSS */
+
+@media screen and (max-width: 767px) {
+
+  .carousel-item > img {
+    position: absolute;
+    width: auto;
+    max-width: none;
+    height: 70vh;
+    right: 0;
+    margin: 0 0 0 auto;           
+  }
+
+  .carousel-item {
+    height: 70vh;
+  }
+  
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+ .footer-box-text li{
+   text-align: center;
+ }
+
+ .footer-nadpis{
+   text-align: center;
+ }
+}  
+
+@media screen and (max-width: 1200px){ 
+
+  .card{ 
+    height: 300px;     
+    max-width: 510px;     
+   }
+  
+   .card-img {    
+    max-width: 510px;
+    height: 300px;    
+   }
+
+
+}
+
