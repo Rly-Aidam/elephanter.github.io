@@ -94,6 +94,15 @@ body{
    text-decoration: underline;
  }
 
+ #clanky h1{
+   padding-top: 50px;
+   font-weight: 700;
+ }
+
+ #clanky hr{
+   margin-bottom: 25px;
+ }
+
  /* clanky */
 
 
@@ -164,14 +173,10 @@ body{
   margin-bottom: 0;
   margin-top: 20px;
 }
-.footer-box-text strong{
-  color: #000;
-  display: inline-block;
-  font-size: 20px;
-  padding-bottom: 25px;
-}
 
-.footer-nadpis, .third p, .third a{
+.footer-nadpis, 
+.third p, 
+.third a{
   font-weight: 700;
 }
 
@@ -266,6 +271,286 @@ body{
    text-decoration: underline;
  }
  
+/* single produkt */ 
+
+#single_produkt{
+  padding: 25px;
+}
+
+#single_produkt h1{
+  font-weight: 700;  
+  padding-bottom: 50px;
+}
+
+.popis{
+  line-height: 30px;
+  padding-bottom: 50px;
+}
+
+.velikost {  
+  font-weight: 700; 
+  font-size: 20px;  
+}
+
+.cena{
+  font-weight: 700;  
+  padding-top: 45px;
+  padding-bottom: 15px;
+  font-size: 40px;
+}
+
+.objednávky h2{
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.objednávky p{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.objednávky a{
+  text-decoration: none;
+  color: rgb(99, 94, 94);  
+  font-weight: 700;
+}
+
+.produkt_cislo{
+  font-size: 25px;
+}
+
+#MainImg{
+  padding-bottom: 25px;
+}
+
+.small-img-row{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+
+}
+
+.small-img-col{  
+  flex-basis: 24%;  
+  cursor: pointer;
+}
+
+.small-img-col img{
+  padding: 0px;
+}
+
+/*doprava a platba*/
+
+#doprava-a-platba h1, #doprava-a-platba h2{
+  font-weight: 700;
+  padding: 25px 0px;
+}
+
+.table td, .table th{
+  vertical-align: top;
+  line-height: 1.7;
+  border: 1px solid #a8a8a8;
+}
+
+
+/*reklamace*/
+
+.reklamace h1, .reklamace h2{
+  font-weight: 700;
+  padding: 25px 0px;
+}
+
+/* kontakt */ 
+
+
+#kontakt{
+ padding-bottom: 100px;
+}
+
+#kontakt h1{
+  font-weight: 700;
+  padding-top: 50px; 
+}
+
+#kontakt hr{
+  margin-bottom: 50px;
+}
+
+.kontakt-box {
+  text-align: center;
+}
+
+.kontakt-box-text a {
+  text-decoration: none;
+  color: rgb(99, 94, 94);  
+  font-weight: lighter;
+}
+
+.kontakt-box-text li{
+  list-style: none;
+  position: relative;  
+  padding-bottom: 15px;
+  text-align: left;
+  text-align: center;
+}
+
+.kontakt-box-text ul{
+  padding: 0;
+}
+
+.telefon {
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.e-adresa{
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.adresa{
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.kontakt-nadpis{
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.mapa{
+  width: 100%;
+  height: 100%;
+}
+ 
+/* O nás */ 
+
+
+.onas h1{
+  font-weight: 700;
+  padding: 25px 0px;
+}
+
+.onas-text{
+  max-width: 1080px;
+  margin: 15px 150px;
+  text-align: center;
+}
+
+.onas-text p {
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.pic1{
+  width: 100%;
+  padding: 25px;
+}
+
+
+/*cart*/
+
+.kosik img{  
+  margin: 0px 15px;
+}
+
+.add{
+  float: right;
+}
+
+.kosik span{  
+  position: absolute;  
+  text-decoration: none;
+  color: rgb(255, 166, 2);
+}
+
+.kosik-container{
+  justify-content: center;  
+}
+
+.kosik-container h1{
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.kosik-container hr{
+  margin-bottom: 50px;
+}
+
+
+.container-nadpis{  
+  max-width: 970px;
+  display: flex;
+  margin: 0px 15%;
+  justify-content: flex-start;
+  border-bottom: 2px solid #a8a8a8;
+  
+}
+
+.kosik-produkt{
+  width: 45%;
+  font-weight: 700;
+}
+
+.kosik-cena{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.kosik-mnozstvi{
+  width: 45%;
+  font-weight: 700;
+}
+.kosik-celkem{
+  font-weight: 700;
+}
+
+
+.container-produktu{  
+  max-width: 970px;
+  justify-content: space-around;
+  margin: 0 15%;
+  margin-top: 25px;
+}
+
+.container-produktu img{
+  max-width: 100px;
+  width: 20%;
+  padding: 10px;
+}
+
+.produkt-kosik {
+  border-bottom: 1px solid #a8a8a8;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nazev,
+.cena-zbozi,
+.mnozstvi,
+.celkem {
+  padding: 5% 0;
+  font-size: 1rem;
+  
+}
+.nazev{
+  width: 35%; 
+}
+.cena-zbozi{
+  width: 25%;  
+}
+.mnozstvi{
+  width: 45%;  
+}
+
+
+
+
+
 
 
 
@@ -285,10 +570,65 @@ body{
   .footer-nadpis {
     text-align: center;
   }
+
+  .container-produktu img{
+    display: none;
+  }
+
+  .container-nadpis{
+    margin: 0 2%;
+  }
+
+  .container-produktu{
+    margin: 2%;
+  }
+
+  .container-nadpis h4{
+    font-size: 1rem;   
+  }
+
+  .nazev,
+  .cena-zbozi,
+  .mnozstvi,
+  .celkem {
+    padding: 5% 0;
+    font-size: 1rem;  
+  } 
+
+  #MainImg{
+    width: 100%;
+  }
+  
+  .small-img-row{
+    width: 100%;
+  }
+ 
+}
+
+@media screen and (max-width: 450px) {  
+  .btn {
+    max-width: 140px;
+    max-height: 65px;
+    padding: 5px 10px;
+  }
+  
+  .navbar-brand{
+    font-size: 8vw;
+  }
+  .navbar-brand img{
+    display: none;
+  }
+  
+
 }
  
 
 @media screen and (max-width: 1200px){ 
+
+
+  .kosik span{
+    right: 8px;
+  }
 
   .card{ 
     height: 300px;     
@@ -299,6 +639,13 @@ body{
     max-width: 510px;
     height: 300px;    
    }
+ 
+  
+  .onas-text{   
+    margin: 15px 25px;    
+  }
+  
+ 
 
 
 }
