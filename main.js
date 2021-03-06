@@ -129,26 +129,19 @@ function setItems(product){
     }   
     
     localStorage.setItem("productsInCart", JSON.stringify 
-    (cartItems));
-
-    console.log("My cartitems are", cartItems);
+    (cartItems));    
 }
 
-function totalCost(product){
-    //console.log("price is", product.price);
+function totalCost(product){   
       
-    let cartCost = localStorage.getItem('totalCost');  
-    
+    let cartCost = localStorage.getItem('totalCost');      
 
     if(cartCost != null){
         cartCost = parseInt(cartCost);
         localStorage.setItem("totalCost", cartCost + product.price);
     } else {
         localStorage.setItem("totalCost", product.price);         
-    }
-
-    console.log("cost is",  cartCost);
-
+    }  
 }
 
 function dispayCart() {
@@ -159,21 +152,19 @@ function dispayCart() {
     console.log(cartItems);
 
     if (cartItems && productContainer ){
-         productContainer.innerHTML = '';
-         Object.values(cartItems).map(item => {
-              productContainer.innerHTML += `              
+        productContainer.innerHTML = '';
+        Object.values(cartItems).map(item => {
+            productContainer.innerHTML += `              
               <div class="produkt-kosik">
                  <img src="produkty/vykosteny/${item.tag}.png">
                  <span class="nazev">${item.name}</span>              
                  <span class="cena-zbozi">${item.price}</span>
                  <span class="mnozstvi">${item.inCart}</span>
                  <span class="celkem">${item.inCart * item.price}</span>
-              </div>              
+              </div>         
               `
-         });        
-    }
-    
-
+            });        
+    }   
 }
 
 
