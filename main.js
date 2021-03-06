@@ -144,10 +144,22 @@ function totalCost(product){
     }  
 }
 
+
+
+function delItem(){          
+        localStorage.removeItem("productsInCart"); 
+        localStorage.removeItem( "totalCost");
+        localStorage.removeItem("cartNumbers");
+        location.reload();
+
+    }
+
+
 function dispayCart() {
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let productContainer = document.querySelector(".container-produktu");
+    let cartCost = localStorage.getItem('totalCost');
 
     console.log(cartItems);
 
@@ -155,15 +167,27 @@ function dispayCart() {
         productContainer.innerHTML = '';
         Object.values(cartItems).map(item => {
             productContainer.innerHTML += `              
-              <div class="produkt-kosik">
-                 <img src="produkty/vykosteny/${item.tag}.png">
+              <div class="produkt-kosik">                                            
+                 <img src="produkty/vykosteny/${item.tag}.png" class="produktPic">
                  <span class="nazev">${item.name}</span>              
-                 <span class="cena-zbozi">${item.price}</span>
+                 <span class="cena-zbozi">${item.price},-</span>
                  <span class="mnozstvi">${item.inCart}</span>
-                 <span class="celkem">${item.inCart * item.price}</span>
+                 <span class="celkem">${item.inCart * item.price},-</span>
               </div>         
               `
-            });        
+            });   
+            
+            productContainer.innerHTML +=`
+               <div class="kosikCelkove d-flex">
+               <img src="pics/x-circle.png" class="del" onclick="delItem();">
+                  <span class="kosikCelkoveNadpis">
+                    Celkem k úhradě
+                  </span>  
+                  <span class="kuhrade">
+                    ${cartCost},-
+                  </span>
+               </div  
+            `
     }   
 }
 
