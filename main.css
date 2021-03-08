@@ -474,22 +474,20 @@ body{
 }
 
 .kosik-container h1{
-    font-weight: 700;
-    margin-top: 50px;
+  font-weight: 700;
+  margin-top: 50px;
 }
 
 .kosik-container hr{
   margin-bottom: 50px;
 }
 
-
 .container-nadpis{  
   max-width: 970px;
   display: flex;
   margin: 0px 15%;
   justify-content: flex-start;
-  border-bottom: 2px solid #a8a8a8;
-  
+  border-bottom: 2px solid #a8a8a8;  
 }
 
 .kosik-produkt{
@@ -508,10 +506,10 @@ body{
   width: 45%;
   font-weight: 700;
 }
+
 .kosik-celkem{
   font-weight: 700;
 }
-
 
 .container-produktu{  
   max-width: 970px;
@@ -557,7 +555,7 @@ body{
 }
 
 .kuhrade{
-    width: 30%;  
+  width: 30%;  
 }
 
 .kosikCelkoveNadpis{
@@ -571,15 +569,29 @@ body{
   cursor: pointer;
 }
 
+#dalsi h2{
+  font-weight: 700;
+  padding-top: 100px;
+}
+
+#single_produkt a{
+    text-decoration: none;
+    color: #000;
+}
 
 
+.form-label{
+  font-weight: 700;
+}
 
+#Formular-objednavka h1, 
+#Formular-objednavka h4 {
+  font-weight: 700;
+}
 
-
-
-
-
-
+.tlacitko-objednat{
+  text-align: end;
+}
 
 
 

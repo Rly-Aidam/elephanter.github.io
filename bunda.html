@@ -18,7 +18,7 @@
    
        <!--navbar start-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
           <div class="container-xl">
             <a class="navbar-brand" href="index.html">
               <img src="pics/logo2.png" alt="" width="50" height="55">
@@ -60,9 +60,9 @@
 
 <main>
 
-   <div class="container" id="single_produkt">
+  <div class="container" id="single_produkt">
      <div class="row">
-       <p>Domu > Produkty > Bunda</p>       
+       <p><a href="index.html"> Domu </a>><a href="produkty.html"> Produkty </a>> Bunda</p>       
          
        <hr>
 
@@ -102,12 +102,12 @@
             <br>
           <span class="cena">1 500 Kč</span>
           <span class="add">
-            <button onclick="myFunction(); spanNone();"  type="submit" id="1" class="btn pro-add">Přidat do košíku</button>
+            <button onclick="idProduktu(); spanNone();"  type="submit" id="1" class="btn pro-add">Přidat do košíku</button>
           </span>
         </div>                         
         <hr>
         <div class="objednávky">
-        <h2>Produkt můžete objednávejt i přes mobil/email/sociální sítě</h2>
+        <h2>Produkt můžete objednat i přes mobil/email/sociální sítě</h2>
         <p>+420 733 762 151</p>
         <p>elephaner.brand@gmail.com</p>
         <a href="https://www.instagram.com/elephanter_clothing/">
@@ -126,7 +126,95 @@
        </div>
      
    </div>
+
+   <div class="container" id="dalsi">    
+
+    <h2>Další produkty v kolekci</h2>
+    <hr>
+
+        <div class="row" id="vykosteny">
+
+  <div class="col-md-6 col-lg-3 border_pro">
+    <div class="produkt">
+      <a  href="klobouk.html">
+        <img src="produkty/vykosteny/6.png" class="produkt-img" alt="" >
+      </a>
+  
+      <div class="produkt-text">
+        <div class="color">
+          <span>
+            <img src="produkty/span color/cerna.png" width="15" height="15">
+          </span>
+          <span>
+            <img src="produkty/span color/modrá.png" width="15" height="15">
+          </span>
+          <span>
+            <img src="produkty/span color/zelená.png" width="15" height="15">
+          </span>       
+        </div>
+        <h3 class="produkt-nadpis">
+          <a href="klobouk.html">Klobouk</a>
+        </h3>
+        <p>Originální klobouk Elephanter s jedinečným designem</p>
+        <strong>600 Kč</strong>
+      </div>
+  
+    </div>
+   </div>
+   
+ <div class="col-md-6 col-lg-3 border_pro">
+  <div class="produkt">
+    <a  href="triko1.html">
+      <img src="produkty/vykosteny/2.png" class="produkt-img" alt="" >
+    </a>
+
+    <div class="produkt-text">
+      <h3 class="produkt-nadpis">
+        <a href="triko1.html">Double color</a>
+      </h3>
+      <p>Originální tričko vylepšené o náš jedinečný design</p>
+      <strong>700 Kč</strong>
+    </div>
+
   </div>
+</div>
+
+<div class="col-md-6 col-lg-3 border_pro">
+<div class="produkt">
+  <a  href="triko2.html">
+    <img src="produkty/vykosteny/3.png" class="produkt-img" alt="" >
+  </a>
+
+  <div class="produkt-text">
+    <h3 class="produkt-nadpis">
+      <a href="triko2.html">Single color</a>
+    </h3>
+    <p>Originální tričko vylepšené o náš jedinečný design</p>
+    <strong>700 Kč</strong>
+  </div>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3 border_pro">
+<div class="produkt">
+  <a  href="triko3.html">
+    <img src="produkty/vykosteny/4.png" class="produkt-img" alt="" >
+  </a>
+
+  <div class="produkt-text">
+    <h3 class="produkt-nadpis">
+      <a href="triko3.html">Polo shirt</a>
+    </h3>
+    <p>Originální tričko vylepšené o náš jedinečný design</p>
+    <strong>700 Kč</strong>
+  </div>
+
+</div>
+</div>   
+</div>
+</div>
+</div>
   
       <!-- FOOTER -->
 
@@ -268,8 +356,7 @@
 <!--JS obrázky-->
 <script>
   var MainImg = document.getElementById("MainImg");
-    var SmallImg = document.getElementsByClassName("SmallImg");
-
+  var SmallImg = document.getElementsByClassName("SmallImg");
 
     SmallImg[0].onclick = function(){
       MainImg.src = SmallImg[0].src;
@@ -285,8 +372,7 @@
 
     SmallImg[3].onclick = function(){
       MainImg.src = SmallImg[3].src;
-    }
-
+    }  
 </script>
 
 
