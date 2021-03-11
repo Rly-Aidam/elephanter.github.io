@@ -73,11 +73,11 @@
           <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Dodací adresa</h4>
             <hr>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate method="POST">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">Jméno</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="firstName" placeholder="Adam" value="" required>
                   <div class="invalid-feedback">
                     Povinné pole
                   </div>
@@ -85,7 +85,7 @@
     
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Přijmení</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                  <input type="text" class="form-control" id="lastName" placeholder="Papež" value="" required>
                   <div class="invalid-feedback">
                     Povinné pole
                   </div>
@@ -106,12 +106,7 @@
                   <div class="invalid-feedback">
                     Povinné pole
                   </div>
-                </div>
-    
-                <div class="col-12">
-                  <label for="address2" class="form-label">Druhá adresa<span class="text-muted">(Volitelný)</span></label>
-                  <input type="text" class="form-control" id="address2" placeholder="Havlovská 31">
-                </div>
+                </div>                   
     
                 <div class="col-md-5">
                   <label for="country" class="form-label">Země</label>
@@ -137,41 +132,27 @@
     
                 <div class="col-md-3">
                   <label for="Zip" class="form-label">PSČ</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required>
+                  <input type="text" class="form-control" id="zip" placeholder="160 00" required >
                   <div class="invalid-feedback">
                    Povinné pole
                   </div>
                 </div>
-              </div>
-    
-              <hr class="my-4">
-    
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="same-address">
-                <label class="form-check-label" for="same-address">Dodací adresa je stejná jako adresa bydliště</label>
-              </div>
-    
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="save-info">
-                <label class="form-check-label" for="save-info">Uložit informace pro příští nákup</label>
-              </div>
+              </div>                                        
     
               <hr class="my-4">
     
               <h4 class="mb-3">Způsob platby</h4>
     
-              <div class="my-3">
-                <div class="form-check">
-                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                  <label class="form-check-label" for="credit">Dobírka</label>
-                </div>
-                <div class="form-check">
-                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                  <label class="form-check-label" for="debit">Bankovní převod</label>
-                </div>
-                <div class="form-check">
-                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                  <label class="form-check-label" for="paypal">Osobní odběr</label>
+              <div class="col-md-4">
+                <label for="platba" class="form-label">Vyberte způsob platby</label>
+                <select class="form-select" id="platba" required>
+                  <option value="">Výběr...</option>
+                  <option>Osobní odběr</option>
+                  <option>Dobírka</option>
+                  <option>Bankovní převod</option>
+                </select>
+                <div class="invalid-feedback">
+                  Zvolte způsob platby 
                 </div>
               </div>
     
@@ -179,7 +160,7 @@
     
               <hr class="my-4">
     
-              <button onsubmit="Odeslat()"  class="w-100 btn btn-primary btn-lg" type="submit">Odeslat objednávku</button>
+              <button  class="w-100 btn btn-primary btn-lg" type="submit">Odeslat objednávku</button>
             </form>
           </div>
         </div>
@@ -323,27 +304,6 @@
 
 </main>
 
-<!--JS obrázky-->
-<script>
-  var MainImg = document.getElementById("MainImg");
-  var SmallImg = document.getElementsByClassName("SmallImg");
-
-    SmallImg[0].onclick = function(){
-      MainImg.src = SmallImg[0].src;
-    }
-
-    SmallImg[1].onclick = function(){
-      MainImg.src = SmallImg[1].src;
-    }
-
-    SmallImg[2].onclick = function(){
-      MainImg.src = SmallImg[2].src;
-    }
-
-    SmallImg[3].onclick = function(){
-      MainImg.src = SmallImg[3].src;
-    }  
-</script>
 
 
 
@@ -351,6 +311,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   
 
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  
   <script src="main.js"></script>
 
 

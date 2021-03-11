@@ -185,32 +185,171 @@ function showCart() {
 }
 
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
   
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    
     var forms = document.querySelectorAll('.needs-validation')
   
-    // Loop over them and prevent submission
+    
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
+        form.addEventListener('submit', function (event){
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
           }  
           form.classList.add('was-validated')
+          submitData();          
         }, false)
+        
       })
 })()
-  
-function Odeslat() {
-    alert("Děkujeme za nákup!");
+
+function submitData(){
+    let name = document.querySelector("#firstName").value;
+    let lastname = document.querySelector("#lastName").value;
+    let email = document.querySelector("#email").value;
+    let address = document.querySelector("#address").value;    
+    let zeme = document.querySelector("#country").value;
+    let mesto = document.querySelector("#state").value;
+    let PSC = document.querySelector("#zip").value; 
+    let platba = document.querySelector("#platba").value;
+      
+
+    sessionStorage.setItem('name', name);
+    sessionStorage.setItem('lastname', lastname);
+    sessionStorage.setItem('email', email);
+    sessionStorage.setItem('address', address);    
+    sessionStorage.setItem('zeme', zeme);
+    sessionStorage.setItem('mesto', mesto);
+    sessionStorage.setItem('PSC', PSC);
+    sessionStorage.setItem('platba', platba);        
 }
 
+function senEmail(){
+    let cartItems = sessionStorage.getItem("productsInCart");
+    cartItems = JSON.parse(cartItems); 
+    let cartCost = sessionStorage.getItem('totalCost');  
+    let random =   Math.random()*100000;
+    let cisloOB = Math.round(random);
+    sessionStorage.setItem('cisloOB', cisloOB);
+    
+
+                    let name = sessionStorage.getItem('name');
+                    let lastname = sessionStorage.getItem('lastname');
+                    let email = sessionStorage.getItem('email');
+                    let address = sessionStorage.getItem('address');                    
+                    let zeme = sessionStorage.getItem('zeme');
+                    let mesto = sessionStorage.getItem('mesto');
+                    let PSC = sessionStorage.getItem('PSC');
+                    let platba = sessionStorage.getItem('platba');  
+                    cisloOB = sessionStorage.getItem('cisloOB');                 
+                    var items; 
+
+                    Object.values(cartItems).map(item => {
+                        items +=`Produkt: ${item.name}<br/>        
+                                 Cene produktu: ${item.price},-<br/>
+                                 Počet: ${item.inCart}<br/>
+                                 Celkem za produkt: ${item.inCart * item.price},-<br/>
+                                 <hr>                                  
+                                 `
+                    })           
+
+    Email.send({                                   
+        SecureToken:"6406f46f-6d63-43f2-b614-49869645f289",
+        To: 'apostrofa159@gmail.com',
+        From: 'apostrofa159@gmail.com',
+        Subject: `${name } odeslal objednávku`,
+        Body: `Jméno: ${name} <br/>  
+               Přijmení: ${lastname} <br/>
+               Email: ${email} <br/>
+               Adresa: ${address} <br/>              
+               Země: ${zeme} <br/>
+               Město: ${mesto} <br/>
+               PSČ: ${PSC} <br/>
+               Způsob platby: ${platba} <br/>   
+               Číslo objednávky: ${cisloOB}<br/>                
+               <hr> 
+               <hr>
+               ${items}               
+               <strong>${cartCost}</strong>                                     
+                `                                                     
+    }).then((message) => alert("Objednávka odeslána. Děkujeme za nákup"), 
+        sessionStorage.clear()        
+    )
+
+    if(platba == "Osobní odběr" ){
+        Email.send({
+            SecureToken:"6406f46f-6d63-43f2-b614-49869645f289",
+            To: `${email}`,
+            From: 'apostrofa159@gmail.com',
+            Subject: `Elephanter - objednávka`,
+            Body: `<h1>Vaše objednávka byla přijata a čeká na Vás.</h1><br/>    
+                   <h2>Zboží na vás bude čekat 7 dní na adrese Havlovská 31</h2><br/> 
+                   <h4> Číslo objednávky: ${cisloOB}</h4><br/>          
+                   <p>Objednal jste si položky: </br>
+                   <hr>
+                   <hr>
+                   ${items}  
+                   </p>
+                   <h2>Děkujeme za nákup a doufáme, že s naším produktem budete spokojení.</h2></br>
+                   <h1>Elephanter</h1>
+            `
+        })
+
+    } else if(platba == "Dobírka"){
+        Email.send({
+            SecureToken:"6406f46f-6d63-43f2-b614-49869645f289",
+            To: `${email}`,
+            From: 'apostrofa159@gmail.com',
+            Subject: `Elephanter - objednávka`,
+            Body: `<h1>Vaše objednávka byla přijata a čeká na Expandaci.</h1><br/>    
+                   <h2>Až zboží odešleme, budeme vás o tom informovat.</h2><br/>   
+                   <h4> Číslo objednávky: ${cisloOB}</h4><br/>       
+                   <p>Objednal jste si položky: </br>
+                   <hr>
+                   <hr>
+                   ${items}  
+                   </p>
+                   <h2>Děkujeme za nákup a doufáme, že s naším produktem budete spokojení.</h2></br>
+                   <h1>Elephanter</h1>
+            `
+        })
+
+    } else if(platba == "Bankovní převod"){
+        Email.send({
+            SecureToken:"6406f46f-6d63-43f2-b614-49869645f289",
+            To: `${email}`,
+            From: 'apostrofa159@gmail.com',
+            Subject: `Elephanter - objednávka`,
+            Body: `<h1>Vaše objednávka byla přijata a čeká na expandaci.</h1><br/>    
+                   <h2>Prosíme o uhrazení částky na účet:  2113235382/2700.</h2><br/>
+                   <strong>Nezapomeňte vyplnit variabilní symbol, který je stejný jako číslo objednávky.</br>
+                   Bez něj nebude možné vaši platbu identifikovat</strong> 
+                   <h4> Číslo objednávky: ${cisloOB}</h4><br/>          
+                   <p>Objednal jste si položky: </br>
+                   <hr>
+                   <hr>
+                   ${items}  
+                   </p>
+                   <h2>Děkujeme za nákup a doufáme, že s naším produktem budete spokojení.</h2></br>
+                   <h1>Elephanter</h1>
+            `
+        })
+
+    }    
+} 
+  
+
+window.onload = function() {
+    var reloading = sessionStorage.getItem("address");
+    if (reloading != null) {
+        senEmail();
+    }
+}
 
 
 showCart();
 spanNone();
-onLoadCartNumbers();
+onLoadCartNumbers(); 
